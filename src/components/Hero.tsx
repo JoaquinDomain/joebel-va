@@ -47,7 +47,7 @@ export default function Hero() {
         </motion.p>
 
         <h1 className="mt-8 font-[family-name:var(--font-playfair)] text-4xl leading-tight md:text-6xl">
-          {"Empowering your business growth through ".split(" ").map((w, i) => (
+          {"Empowering your business growth through".split(" ").map((w, i) => (
             <motion.span
               key={`${w}-${i}`}
               initial={{ opacity: 0, y: 24 }}
@@ -59,16 +59,17 @@ export default function Hero() {
             </motion.span>
           ))}
           {words.map((w, i) => (
-            <motion.span
-              key={w}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="accent inline-block"
-            >
-              {w}
-              {i < words.length - 1 ? ", " : " "}
-            </motion.span>
+            <span key={w}>
+              <motion.span
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                className="accent inline-block"
+              >
+                {w}
+              </motion.span>
+              {i < words.length - 2 ? ", " : i === words.length - 2 ? ", and " : " "}
+            </span>
           ))}
           <span>virtual assistance.</span>
         </h1>
