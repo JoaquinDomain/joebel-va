@@ -25,9 +25,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-[#e6dbcb] bg-[#f9f6f0]/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-5">
-          <a href="#home" className="font-[family-name:var(--font-playfair)] text-xl tracking-[0.18em] uppercase">
+          <a href="#home" className="font-[family-name:var(--font-playfair)] text-2xl tracking-[0.18em] uppercase">
             Joebel
-            <span className="accent ml-2 text-sm tracking-normal normal-case">virtual assistance</span>
+            <span className="accent ml-2 text-base tracking-normal normal-case">virtual assistance</span>
           </a>
         </div>
         <div className="flex items-center gap-4">
@@ -46,7 +46,7 @@ export default function Header() {
             </a>
           ))}
         </div>
-        <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] uppercase tracking-[0.22em]">
+        <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] uppercase tracking-[0.22em]">
           {NAV.map((n) => (
             <a
               key={n.href}

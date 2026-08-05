@@ -123,13 +123,13 @@ export default function Home() {
           <div className="grid gap-10 md:grid-cols-3">
             {PRICING.map((p, i) => (
               <Reveal key={p.name} delay={i * 0.1} className="border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
-                <p className="text-[11px] uppercase tracking-[0.22em] opacity-70">{p.name}</p>
+                <p className="text-[13px] uppercase tracking-[0.22em] opacity-70">{p.name}</p>
                 <p className="mt-6 font-[family-name:var(--font-playfair)] text-3xl">{p.price}</p>
-                <p className="accent mt-1 text-sm">{p.unit}</p>
-                <p className="mt-6 text-sm leading-relaxed opacity-80">{p.note}</p>
+                <p className="accent mt-1 text-base">{p.unit}</p>
+                <p className="mt-6 text-base leading-relaxed opacity-80">{p.note}</p>
                 <a
                   href="#contact"
-                  className="mt-8 inline-block border border-[#5a4a42] px-8 py-2.5 text-[11px] uppercase tracking-[0.24em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0]"
+                  className="mt-8 inline-block border border-[#5a4a42] px-8 py-2.5 text-[13px] uppercase tracking-[0.24em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0]"
                 >
                   Enquire
                 </a>
@@ -147,13 +147,13 @@ export default function Home() {
           <div className="grid gap-10 md:grid-cols-2">
             {RESOURCES.map((r, i) => (
               <Reveal key={r.title} delay={i * 0.1} className="border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
-                <h3 className="font-[family-name:var(--font-playfair)] text-xl">{r.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed opacity-80">{r.description}</p>
+                <h3 className="font-[family-name:var(--font-playfair)] text-2xl">{r.title}</h3>
+                <p className="mt-4 text-base leading-relaxed opacity-80">{r.description}</p>
                 <a
                   href={resourceUrl(r.file)}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-block border border-[#5a4a42] px-8 py-2.5 text-[11px] uppercase tracking-[0.24em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0]"
+                  className="mt-8 inline-block border border-[#5a4a42] px-8 py-2.5 text-[13px] uppercase tracking-[0.24em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0]"
                 >
                   Download PDF
                 </a>
@@ -161,8 +161,8 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12">
-            <p className="text-[11px] uppercase tracking-[0.22em] opacity-70">Tool stack directory</p>
-            <ul className="mt-5 flex flex-wrap gap-3 text-sm">
+            <p className="text-[13px] uppercase tracking-[0.22em] opacity-70">Tool stack directory</p>
+            <ul className="mt-5 flex flex-wrap gap-3 text-base">
               {TOOL_STACK.map((t) => (
                 <li key={t} className="border border-[#e6dbcb] px-5 py-2">
                   {t}
@@ -181,8 +181,8 @@ export default function Home() {
           <div className="grid gap-10 md:grid-cols-3">
             {SOLUTIONS.map((s, i) => (
               <Reveal key={s.name} delay={i * 0.1} className="border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
-                <h3 className="font-[family-name:var(--font-playfair)] text-xl">{s.name}</h3>
-                <p className="mt-4 text-sm leading-relaxed opacity-80">{s.copy}</p>
+                <h3 className="font-[family-name:var(--font-playfair)] text-2xl">{s.name}</h3>
+                <p className="mt-4 text-base leading-relaxed opacity-80">{s.copy}</p>
               </Reveal>
             ))}
           </div>
@@ -196,21 +196,21 @@ export default function Home() {
         >
           <div className="grid gap-16 md:grid-cols-2">
             <ContactForm />
-            <div className="space-y-6 text-sm leading-relaxed">
+            <div className="space-y-6 text-base leading-relaxed">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] opacity-70">Email</p>
+                <p className="text-[13px] uppercase tracking-[0.22em] opacity-70">Email</p>
                 <a href="mailto:hello@joebelva.com" className="mt-1 block underline-offset-4 hover:underline">
                   hello@joebelva.com
                 </a>
               </div>
               <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] opacity-70">Phone / WhatsApp</p>
+                <p className="text-[13px] uppercase tracking-[0.22em] opacity-70">Phone / WhatsApp</p>
                 <a href="https://wa.me/639000000000" className="mt-1 block underline-offset-4 hover:underline">
                   +63 900 000 0000
                 </a>
               </div>
               <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] opacity-70">Social</p>
+                <p className="text-[13px] uppercase tracking-[0.22em] opacity-70">Social</p>
                 <p className="mt-1 opacity-80">@joebelva on LinkedIn, Instagram & Facebook</p>
               </div>
             </div>
@@ -218,7 +218,7 @@ export default function Home() {
         </Section>
       </main>
 
-      <footer className="border-t border-[#e6dbcb] px-6 py-10 text-center text-[11px] uppercase tracking-[0.24em] opacity-70">
+      <footer className="border-t border-[#e6dbcb] px-6 py-10 text-center text-[13px] uppercase tracking-[0.24em] opacity-70">
         © {new Date().getFullYear()} Joebel Virtual Assistance
       </footer>
     </>

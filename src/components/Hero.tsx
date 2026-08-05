@@ -41,7 +41,7 @@ export default function Hero() {
           initial={{ opacity: 0, letterSpacing: "0.8em" }}
           animate={{ opacity: 0.7, letterSpacing: "0.4em" }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[11px] uppercase"
+          className="text-[13px] uppercase"
         >
           Virtual Assistance
         </motion.p>
@@ -90,7 +90,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 + i * 0.15 }}
             >
-              <h3 className="font-[family-name:var(--font-playfair)] text-lg">{block.title}</h3>
+              <h3 className="font-[family-name:var(--font-playfair)] text-xl">{block.title}</h3>
               <p className="mt-3 leading-relaxed opacity-80">{block.copy}</p>
             </motion.div>
           ))}
@@ -103,7 +103,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.3 }}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
-          className="mt-14 border border-[#5a4a42] px-10 py-3 text-[11px] uppercase tracking-[0.28em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0]"
+          className="mt-14 border border-[#5a4a42] px-10 py-3 text-[13px] uppercase tracking-[0.28em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0]"
         >
           Start a conversation
         </motion.a>
@@ -113,7 +113,7 @@ export default function Hero() {
         aria-hidden
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] opacity-60"
+        className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.3em] opacity-60"
       >
         scroll
       </motion.div>
