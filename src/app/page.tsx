@@ -1,11 +1,15 @@
 import ContactForm from "@/components/ContactForm";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import PinnedServices, { type ServiceTrack } from "@/components/PinnedServices";
+import Reveal from "@/components/Reveal";
 import Section from "@/components/Section";
 
-const SERVICES = [
+const SERVICES: ServiceTrack[] = [
   {
     title: "General Admin",
+    blurb:
+      "The day-to-day backbone: your inbox, your calendar, and your records kept in order without you asking.",
     items: [
       "Calendar management",
       "Email triage",
@@ -16,6 +20,8 @@ const SERVICES = [
   },
   {
     title: "Specialized VA",
+    blurb:
+      "Creative and growth support that keeps your brand visible and your pipeline filling up.",
     items: [
       "Social media management",
       "Basic graphic design (Canva)",
@@ -25,6 +31,8 @@ const SERVICES = [
   },
   {
     title: "Industrial VA",
+    blurb:
+      "Technical assistance for operations-heavy teams that run on documentation and data.",
     items: [
       "Technical documentation",
       "System workflow mapping",
@@ -103,18 +111,7 @@ export default function Home() {
           title="Services"
           intro="Three focused support tracks, delivered by a virtual assistant who learns your business and works as an extension of your team."
         >
-          <div className="grid gap-10 md:grid-cols-3">
-            {SERVICES.map((s) => (
-              <div key={s.title} className="border border-[#e6dbcb] bg-white/40 p-8">
-                <h3 className="font-[family-name:var(--font-playfair)] text-xl">{s.title}</h3>
-                <ul className="mt-6 space-y-3 text-sm leading-relaxed opacity-80">
-                  {s.items.map((i) => (
-                    <li key={i}>{i}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <PinnedServices services={SERVICES} />
         </Section>
 
         <Section
@@ -124,8 +121,8 @@ export default function Home() {
           intro="Transparent rates with no hidden fees. Choose the rhythm that matches your workload."
         >
           <div className="grid gap-10 md:grid-cols-3">
-            {PRICING.map((p) => (
-              <div key={p.name} className="border border-[#e6dbcb] bg-white/40 p-8">
+            {PRICING.map((p, i) => (
+              <Reveal key={p.name} delay={i * 0.1} className="border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
                 <p className="text-[11px] uppercase tracking-[0.22em] opacity-70">{p.name}</p>
                 <p className="mt-6 font-[family-name:var(--font-playfair)] text-3xl">{p.price}</p>
                 <p className="accent mt-1 text-sm">{p.unit}</p>
@@ -136,7 +133,7 @@ export default function Home() {
                 >
                   Enquire
                 </a>
-              </div>
+              </Reveal>
             ))}
           </div>
         </Section>
@@ -148,8 +145,8 @@ export default function Home() {
           intro="Practical guides to help you delegate well, plus the tool stack we work in every day."
         >
           <div className="grid gap-10 md:grid-cols-2">
-            {RESOURCES.map((r) => (
-              <div key={r.title} className="border border-[#e6dbcb] bg-white/40 p-8">
+            {RESOURCES.map((r, i) => (
+              <Reveal key={r.title} delay={i * 0.1} className="border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
                 <h3 className="font-[family-name:var(--font-playfair)] text-xl">{r.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed opacity-80">{r.description}</p>
                 <a
@@ -160,7 +157,7 @@ export default function Home() {
                 >
                   Download PDF
                 </a>
-              </div>
+              </Reveal>
             ))}
           </div>
           <div className="mt-12">
@@ -182,11 +179,11 @@ export default function Home() {
           intro="The same care, shaped around where your business is today."
         >
           <div className="grid gap-10 md:grid-cols-3">
-            {SOLUTIONS.map((s) => (
-              <div key={s.name} className="border border-[#e6dbcb] bg-white/40 p-8">
+            {SOLUTIONS.map((s, i) => (
+              <Reveal key={s.name} delay={i * 0.1} className="border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
                 <h3 className="font-[family-name:var(--font-playfair)] text-xl">{s.name}</h3>
                 <p className="mt-4 text-sm leading-relaxed opacity-80">{s.copy}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </Section>

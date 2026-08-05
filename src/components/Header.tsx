@@ -1,3 +1,7 @@
+"use client";
+
+import { motion, useScroll, useSpring } from "framer-motion";
+
 const NAV = [
   { href: "#home", label: "Home" },
   { href: "#services", label: "Services" },
@@ -14,6 +18,9 @@ const SOCIALS = [
 ];
 
 export default function Header() {
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
+
   return (
     <header className="sticky top-0 z-50 border-b border-[#e6dbcb] bg-[#f9f6f0]/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 md:flex-row md:items-center md:justify-between">
@@ -41,12 +48,21 @@ export default function Header() {
         </div>
         <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] uppercase tracking-[0.22em]">
           {NAV.map((n) => (
-            <a key={n.href} href={n.href} className="opacity-75 transition hover:opacity-100">
+            <a
+              key={n.href}
+              href={n.href}
+              className="group relative opacity-75 transition hover:opacity-100"
+            >
               {n.label}
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#5a4a42] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
       </div>
+      <motion.div
+        style={{ scaleX: progress }}
+        className="h-px origin-left bg-[#5a4a42]/60"
+      />
     </header>
   );
 }
