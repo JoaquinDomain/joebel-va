@@ -33,7 +33,7 @@ export default function Header() {
             </motion.span>
             <span className="font-[family-name:var(--font-playfair)] text-2xl tracking-[0.18em] uppercase">
               Gears
-              <span className="accent ml-2 text-base tracking-normal normal-case">virtual solutions</span>
+              <span className="accent ml-2 text-lg tracking-normal normal-case">virtual solutions</span>
             </span>
           </a>
         </div>
@@ -53,7 +53,7 @@ export default function Header() {
             </a>
           ))}
         </div>
-        <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] uppercase tracking-[0.22em]">
+        <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[15px] uppercase tracking-[0.22em]">
           {NAV.map((n) => (
             <a
               key={n.href}

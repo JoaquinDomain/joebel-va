@@ -54,15 +54,15 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="grid gap-6">
       <label className="grid gap-2">
-        <span className="text-[13px] uppercase tracking-[0.22em] opacity-70">Name</span>
+        <span className="text-[15px] uppercase tracking-[0.22em] opacity-70">Name</span>
         <input name="name" required className={inputClass} />
       </label>
       <label className="grid gap-2">
-        <span className="text-[13px] uppercase tracking-[0.22em] opacity-70">Email</span>
+        <span className="text-[15px] uppercase tracking-[0.22em] opacity-70">Email</span>
         <input name="email" type="email" required className={inputClass} />
       </label>
       <label className="grid gap-2">
-        <span className="text-[13px] uppercase tracking-[0.22em] opacity-70">
+        <span className="text-[15px] uppercase tracking-[0.22em] opacity-70">
           Service interest
         </span>
         <select name="service_interest" required defaultValue="" className={inputClass}>
@@ -77,20 +77,20 @@ export default function ContactForm() {
         </select>
       </label>
       <label className="grid gap-2">
-        <span className="text-[13px] uppercase tracking-[0.22em] opacity-70">Message</span>
+        <span className="text-[15px] uppercase tracking-[0.22em] opacity-70">Message</span>
         <textarea name="message" rows={4} required className={inputClass} />
       </label>
       <button
         type="submit"
         disabled={status === "sending"}
-        className="justify-self-start border border-[#5a4a42] px-10 py-3 text-[13px] uppercase tracking-[0.28em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0] disabled:opacity-50"
+        className="justify-self-start border border-[#5a4a42] px-10 py-3 text-[15px] uppercase tracking-[0.28em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0] disabled:opacity-50"
       >
         {status === "sending" ? "Sending..." : "Send inquiry"}
       </button>
       {status === "sent" && (
-        <p className="text-base opacity-80">Thank you — your inquiry has been received.</p>
+        <p className="text-lg opacity-80">Thank you — your inquiry has been received.</p>
       )}
-      {status === "error" && <p className="text-base text-red-700">{error}</p>}
+      {status === "error" && <p className="text-lg text-red-700">{error}</p>}
     </form>
   );
 }

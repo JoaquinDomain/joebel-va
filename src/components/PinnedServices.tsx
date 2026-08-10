@@ -59,7 +59,7 @@ export default function PinnedServices({ services }: { services: ServiceTrack[] 
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#f9f6f0]/90 via-[#e6dbcb]/45 to-transparent" />
           <div className="absolute bottom-0 left-0 p-8">
-            <p className="text-[13px] uppercase tracking-[0.3em] opacity-70">Your partner</p>
+            <p className="text-[15px] uppercase tracking-[0.3em] opacity-70">Your partner</p>
             <p className="mt-3 max-w-xs font-[family-name:var(--font-playfair)] text-2xl leading-snug">
               One assistant, <span className="accent">every</span> gear of your operation.
             </p>
@@ -70,12 +70,12 @@ export default function PinnedServices({ services }: { services: ServiceTrack[] 
       <div className="space-y-10">
         {services.map((s, i) => (
           <article key={s.title} className="service-card border border-[#e6dbcb] bg-white/50 p-8">
-            <p className="text-[13px] uppercase tracking-[0.3em] opacity-60">
+            <p className="text-[15px] uppercase tracking-[0.3em] opacity-60">
               {String(i + 1).padStart(2, "0")}
             </p>
             <h3 className="mt-4 font-[family-name:var(--font-playfair)] text-2xl">{s.title}</h3>
-            <p className="mt-3 text-base leading-relaxed opacity-80">{s.blurb}</p>
-            <ul className="mt-6 grid gap-3 text-base opacity-80 sm:grid-cols-2">
+            <p className="mt-3 text-lg leading-relaxed opacity-80">{s.blurb}</p>
+            <ul className="mt-6 grid gap-3 text-lg opacity-80 sm:grid-cols-2">
               {s.items.map((item) => (
                 <li key={item} className="border-l border-[#c9b9a4] pl-3">
                   {item}
