@@ -109,7 +109,7 @@ export default function Home() {
           id="services"
           eyebrow="What we do"
           title="Services"
-          intro="Three focused support tracks, delivered by a virtual assistant who learns your business and works as an extension of your team."
+          intro="Three interlocking support tracks, delivered by a virtual assistant who learns your business and works as an extension of your team."
         >
           <PinnedServices services={SERVICES} />
         </Section>
@@ -176,7 +176,7 @@ export default function Home() {
           id="solutions"
           eyebrow="Who we help"
           title="Solutions"
-          intro="The same care, shaped around where your business is today."
+          intro="The same precision, geared to where your business is today."
         >
           <div className="grid gap-10 md:grid-cols-3">
             {SOLUTIONS.map((s, i) => (
@@ -199,8 +199,8 @@ export default function Home() {
             <div className="space-y-6 text-base leading-relaxed">
               <div>
                 <p className="text-[13px] uppercase tracking-[0.22em] opacity-70">Email</p>
-                <a href="mailto:hello@joebelva.com" className="mt-1 block underline-offset-4 hover:underline">
-                  hello@joebelva.com
+                <a href="mailto:hello@gearsvirtual.com" className="mt-1 block underline-offset-4 hover:underline">
+                  hello@gearsvirtual.com
                 </a>
               </div>
               <div>
@@ -211,7 +211,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-[13px] uppercase tracking-[0.22em] opacity-70">Social</p>
-                <p className="mt-1 opacity-80">@joebelva on LinkedIn, Instagram & Facebook</p>
+                <p className="mt-1 opacity-80">@gearsvirtual on LinkedIn, Instagram & Facebook</p>
               </div>
             </div>
           </div>
@@ -219,7 +219,7 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-[#e6dbcb] px-6 py-10 text-center text-[13px] uppercase tracking-[0.24em] opacity-70">
-        © {new Date().getFullYear()} Joebel Virtual Assistance
+        © {new Date().getFullYear()} Gears Virtual Solutions
       </footer>
     </>
   );

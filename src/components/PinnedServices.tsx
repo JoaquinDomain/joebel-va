@@ -61,7 +61,7 @@ export default function PinnedServices({ services }: { services: ServiceTrack[] 
           <div className="absolute bottom-0 left-0 p-8">
             <p className="text-[13px] uppercase tracking-[0.3em] opacity-70">Your partner</p>
             <p className="mt-3 max-w-xs font-[family-name:var(--font-playfair)] text-2xl leading-snug">
-              One assistant, <span className="accent">every</span> corner of your operation.
+              One assistant, <span className="accent">every</span> gear of your operation.
             </p>
           </div>
         </div>

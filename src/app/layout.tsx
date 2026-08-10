@@ -14,9 +14,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "JOEBEL VA | Virtual Assistance",
+  title: "Gears Virtual Solutions | Virtual Assistance",
   description:
-    "Empowering your business growth through reliable, expert, and seamless virtual assistance.",
+    "The moving parts behind your business growth — reliable, expert, and seamless virtual assistance.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

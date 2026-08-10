@@ -2,6 +2,17 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import GearMark from "@/components/GearMark";
+
+const MOTTO = [
+  { word: "The", accent: false },
+  { word: "moving", accent: true },
+  { word: "parts", accent: true },
+  { word: "behind", accent: false },
+  { word: "your", accent: false },
+  { word: "business", accent: false },
+  { word: "growth", accent: false },
+];
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -15,7 +26,8 @@ export default function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-18%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
-  const words = ["reliable", "expert", "seamless"];
+  const gearA = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  const gearB = useTransform(scrollYProgress, [0, 1], [0, -240]);
 
   return (
     <section id="home" ref={ref} className="relative isolate overflow-hidden">
@@ -34,6 +46,19 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#f9f6f0]/95 via-[#efe4d3]/85 to-[#f9f6f0]/95" />
 
       <motion.div
+        style={{ rotate: gearA }}
+        className="pointer-events-none absolute -left-24 top-16 -z-10 h-72 w-72 opacity-[0.07]"
+      >
+        <GearMark className="h-full w-full" />
+      </motion.div>
+      <motion.div
+        style={{ rotate: gearB }}
+        className="pointer-events-none absolute -right-16 bottom-10 -z-10 h-52 w-52 opacity-[0.07]"
+      >
+        <GearMark className="h-full w-full" />
+      </motion.div>
+
+      <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
         className="mx-auto flex max-w-4xl flex-col items-center px-6 py-32 text-center md:py-44"
       >
@@ -43,42 +68,38 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="text-[13px] uppercase"
         >
-          Virtual Assistance
+          Gears Virtual Solutions
         </motion.p>
 
         <h1 className="mt-8 font-[family-name:var(--font-playfair)] text-4xl leading-tight md:text-6xl">
-          {"Empowering your business growth through".split(" ").map((w, i) => (
+          {MOTTO.map(({ word, accent }, i) => (
             <motion.span
-              key={`${w}-${i}`}
+              key={word}
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block"
+              transition={{ duration: 0.6, delay: 0.15 + i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              className={accent ? "accent inline-block" : "inline-block"}
             >
-              {w}&nbsp;
+              {word}&nbsp;
             </motion.span>
           ))}
-          {words.map((w, i) => (
-            <span key={w}>
-              <motion.span
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                className="accent inline-block"
-              >
-                {w}
-              </motion.span>
-              {i < words.length - 2 ? ", " : i === words.length - 2 ? ", and " : " "}
-            </span>
-          ))}
-          <span>virtual assistance.</span>
         </h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.85 }}
+          transition={{ duration: 0.9, delay: 0.8 }}
+          className="mt-8 max-w-2xl leading-relaxed"
+        >
+          Reliable, expert, and seamless virtual assistance — the gears turning quietly
+          behind your admin, marketing, and operations.
+        </motion.p>
 
         <div className="mt-12 grid gap-10 text-left md:grid-cols-2">
           {[
             {
               title: "Our Mission",
-              copy: "To give founders and teams back their most valuable asset — time — by delivering dependable administrative, creative, and technical support that quietly keeps every operation moving.",
+              copy: "To give founders and teams back their most valuable asset — time — by delivering dependable administrative, creative, and technical support that keeps every part of the machine turning.",
             },
             {
               title: "Our Vision",

@@ -1,6 +1,6 @@
-# JOEBEL VA
+# Gears Virtual Solutions
 
-One-page virtual assistance website: Next.js (App Router) + Tailwind CSS + Supabase, deployed on Vercel.
+One-page virtual assistance website for Gears Virtual Solutions — "The moving parts behind your business growth": Next.js (App Router) + Tailwind CSS + Supabase, deployed on Vercel.
 
 ## Local development
 

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import GearMark from "@/components/GearMark";
 import Reveal from "@/components/Reveal";
 
 export default function Section({
@@ -19,7 +20,10 @@ export default function Section({
       <div className="mx-auto max-w-6xl">
         <Reveal>
           {eyebrow && (
-            <p className="mb-3 text-[13px] uppercase tracking-[0.32em] opacity-60">{eyebrow}</p>
+            <p className="mb-3 flex items-center gap-3 text-[13px] uppercase tracking-[0.32em] opacity-60">
+              <GearMark className="h-4 w-4" />
+              {eyebrow}
+            </p>
           )}
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl">{title}</h2>
           {intro && <p className="mt-4 max-w-2xl leading-relaxed opacity-80">{intro}</p>}

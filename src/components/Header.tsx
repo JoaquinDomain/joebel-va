@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import GearMark from "@/components/GearMark";
 
 const NAV = [
   { href: "#home", label: "Home" },
@@ -20,14 +21,20 @@ const SOCIALS = [
 export default function Header() {
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
+  const gearRotation = useTransform(progress, [0, 1], [0, 540]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#e6dbcb] bg-[#f9f6f0]/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-5">
-          <a href="#home" className="font-[family-name:var(--font-playfair)] text-2xl tracking-[0.18em] uppercase">
-            Joebel
-            <span className="accent ml-2 text-base tracking-normal normal-case">virtual assistance</span>
+          <a href="#home" className="flex items-center gap-3">
+            <motion.span style={{ rotate: gearRotation }} className="block h-7 w-7 opacity-80">
+              <GearMark className="h-full w-full" />
+            </motion.span>
+            <span className="font-[family-name:var(--font-playfair)] text-2xl tracking-[0.18em] uppercase">
+              Gears
+              <span className="accent ml-2 text-base tracking-normal normal-case">virtual solutions</span>
+            </span>
           </a>
         </div>
         <div className="flex items-center gap-4">
