@@ -1,8 +1,15 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import GearMark from "@/components/GearMark";
+
+const HERO_IMAGES = [
+  "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=2000&q=80",
+  "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=2000&q=80",
+  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2000&q=80",
+  "https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=2000&q=80",
+];
 
 const MOTTO = [
   { word: "The", accent: false },
@@ -26,6 +33,16 @@ export default function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-18%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(
+      () => setActiveImage((current) => (current + 1) % HERO_IMAGES.length),
+      4000,
+    );
+    return () => window.clearInterval(timer);
+  }, []);
+
   const gearA = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const gearB = useTransform(scrollYProgress, [0, 1], [0, -240]);
 
@@ -35,13 +52,16 @@ export default function Hero() {
         style={{ y: imageY, scale: imageScale }}
         className="absolute inset-0 -z-20"
       >
-        <div
-          className="h-full w-full bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=2000&q=80')",
-          }}
-        />
+        {HERO_IMAGES.map((src, i) => (
+          <div
+            key={src}
+            aria-hidden
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+              i === activeImage ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url('${src}')` }}
+          />
+        ))}
       </motion.div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#f9f6f0]/95 via-[#efe4d3]/85 to-[#f9f6f0]/95" />
 
