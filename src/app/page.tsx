@@ -1,9 +1,11 @@
 import ContactForm from "@/components/ContactForm";
+import MediaGallery from "@/components/MediaGallery";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PinnedServices, { type ServiceTrack } from "@/components/PinnedServices";
 import Reveal from "@/components/Reveal";
 import Section from "@/components/Section";
+import { getMediaItems } from "@/lib/media";
 
 const SERVICES: ServiceTrack[] = [
   {
@@ -74,6 +76,11 @@ const RESOURCES = [
     description: "Frameworks and ready-to-use templates for handing off work with confidence.",
     file: "delegation-guide-and-templates.pdf",
   },
+  {
+    title: "Tool Stack Directory",
+    description: "The apps we run client operations in, with what each one is best used for.",
+    file: "tool-stack-directory.pdf",
+  },
 ];
 
 const TOOL_STACK = ["Slack", "Notion", "Asana", "Google Workspace", "Zapier"];
@@ -98,7 +105,9 @@ function resourceUrl(file: string) {
   return base ? `${base}/storage/v1/object/public/resources/${file}` : "#contact";
 }
 
-export default function Home() {
+export default async function Home() {
+  const media = await getMediaItems();
+
   return (
     <>
       <Header />
@@ -140,11 +149,11 @@ export default function Home() {
 
         <Section
           id="resources"
-          eyebrow="Free downloads"
+          eyebrow="Downloads & portfolio"
           title="Resources"
-          intro="Practical guides to help you delegate well, plus the tool stack we work in every day."
+          intro="Practical guides to help you delegate well, plus a look at the work we have delivered."
         >
-          <div className="grid gap-10 md:grid-cols-2">
+          <div className="grid gap-10 md:grid-cols-3">
             {RESOURCES.map((r, i) => (
               <Reveal key={r.title} delay={i * 0.1} className="border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
                 <h3 className="font-[family-name:var(--font-playfair)] text-2xl">{r.title}</h3>
@@ -169,6 +178,19 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div id="portfolio" className="mt-20 scroll-mt-28">
+            <p className="text-[15px] uppercase tracking-[0.22em] opacity-70">Portfolio</p>
+            <h3 className="mt-3 font-[family-name:var(--font-playfair)] text-3xl">
+              Recent <span className="accent">work</span>
+            </h3>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed opacity-80">
+              Photos and videos from client projects, updated straight from the studio.
+            </p>
+            <div className="mt-10">
+              <MediaGallery items={media} />
+            </div>
           </div>
         </Section>
 

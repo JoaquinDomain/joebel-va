@@ -13,12 +13,26 @@ npm run dev
 ## Supabase
 
 1. Create a project at https://supabase.com.
-2. Run `supabase/schema.sql` in the SQL editor. It creates the `inquiries` table with
-   RLS enabled (insert-only for anonymous visitors, no public reads) and a public
-   `resources` storage bucket.
+2. Run `supabase/schema.sql` in the SQL editor. It creates:
+   - `inquiries` with RLS (insert-only for anonymous visitors, no public reads);
+   - `media_gallery` with RLS (public read, writes restricted to authenticated admins);
+   - public `resources` and `portfolio_media` storage buckets with matching policies.
 3. Upload the PDFs to the `resources` bucket using these exact object names:
    - `client-onboarding-kit.pdf`
    - `delegation-guide-and-templates.pdf`
+   - `tool-stack-directory.pdf`
+4. Create the admin account under Authentication → Users (email + password). That user
+   is the only one who can publish or delete portfolio media.
+
+## Portfolio admin
+
+| Route | Purpose |
+| --- | --- |
+| `/hidden-studio-login` | Unlisted Supabase Auth login (noindex) |
+| `/admin-dashboard` | Upload photos/videos to `portfolio_media`, delete existing items |
+
+Uploads and deletions call `revalidatePath('/')`, so the public gallery updates without a
+redeploy. Photos crossfade in a 4-second carousel; videos autoplay muted in a grid.
 
 ## Environment variables
 

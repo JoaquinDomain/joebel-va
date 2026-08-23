@@ -91,19 +91,30 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.8 }}
           className="mt-8 max-w-2xl leading-relaxed"
         >
-          Reliable, expert, and seamless virtual assistance — the gears turning quietly
-          behind your admin, marketing, and operations.
+          Empowering <span className="accent">passionate</span> entrepreneurs to conquer
+          their business goals with strategic support and a touch of{" "}
+          <span className="accent">creativity</span>.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.8 }}
+          transition={{ duration: 0.9, delay: 0.95 }}
+          className="mt-6 max-w-2xl leading-relaxed"
+        >
+          We bridge the gap between heavy workloads and business success, taking the
+          day-to-day off your desk so you can focus on scaling.
         </motion.p>
 
         <div className="mt-12 grid gap-10 text-left md:grid-cols-2">
           {[
             {
               title: "Our Mission",
-              copy: "To give founders and teams back their most valuable asset — time — by delivering dependable administrative, creative, and technical support that keeps every part of the machine turning.",
+              copy: "To deliver top-tier, efficient, and tailored virtual assistance that streamlines your daily operations and keeps every part of the machine turning.",
             },
             {
               title: "Our Vision",
-              copy: "To become the trusted long-term partner behind growing businesses worldwide, where delegation feels effortless and every task is handled with precision and care.",
+              copy: "To become the premier global outsourcing partner, recognised for integrity, adaptability, and high-impact digital solutions.",
             },
           ].map((block, i) => (
             <motion.div
