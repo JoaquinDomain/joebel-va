@@ -131,14 +131,14 @@ export default async function Home() {
         >
           <div className="grid gap-10 md:grid-cols-3">
             {PRICING.map((p, i) => (
-              <Reveal key={p.name} delay={i * 0.1} className="border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
+              <Reveal key={p.name} delay={i * 0.1} className="flex h-full flex-col border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
                 <p className="text-[15px] uppercase tracking-[0.22em] opacity-70">{p.name}</p>
                 <p className="mt-6 font-[family-name:var(--font-playfair)] text-3xl">{p.price}</p>
                 <p className="accent mt-1 text-lg">{p.unit}</p>
-                <p className="mt-6 text-lg leading-relaxed opacity-80">{p.note}</p>
+                <p className="mt-6 mb-8 text-lg leading-relaxed opacity-80">{p.note}</p>
                 <a
                   href="#contact"
-                  className="mt-8 inline-block border border-[#5a4a42] px-8 py-2.5 text-[15px] uppercase tracking-[0.24em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0]"
+                  className="mt-auto self-start border border-[#5a4a42] px-8 py-2.5 text-[15px] uppercase tracking-[0.24em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0]"
                 >
                   Enquire
                 </a>
@@ -155,14 +155,14 @@ export default async function Home() {
         >
           <div className="grid gap-10 md:grid-cols-3">
             {RESOURCES.map((r, i) => (
-              <Reveal key={r.title} delay={i * 0.1} className="border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
+              <Reveal key={r.title} delay={i * 0.1} className="flex h-full flex-col border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
                 <h3 className="font-[family-name:var(--font-playfair)] text-2xl">{r.title}</h3>
-                <p className="mt-4 text-lg leading-relaxed opacity-80">{r.description}</p>
+                <p className="mt-4 mb-8 text-lg leading-relaxed opacity-80">{r.description}</p>
                 <a
                   href={resourceUrl(r.file)}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-block border border-[#5a4a42] px-8 py-2.5 text-[15px] uppercase tracking-[0.24em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0]"
+                  className="mt-auto self-start border border-[#5a4a42] px-8 py-2.5 text-[15px] uppercase tracking-[0.24em] transition hover:bg-[#5a4a42] hover:text-[#f9f6f0]"
                 >
                   Download PDF
                 </a>
@@ -202,7 +202,7 @@ export default async function Home() {
         >
           <div className="grid gap-10 md:grid-cols-3">
             {SOLUTIONS.map((s, i) => (
-              <Reveal key={s.name} delay={i * 0.1} className="border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
+              <Reveal key={s.name} delay={i * 0.1} className="flex h-full flex-col border border-[#e6dbcb] bg-white/40 p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_40px_-30px_#5a4a42]">
                 <h3 className="font-[family-name:var(--font-playfair)] text-2xl">{s.name}</h3>
                 <p className="mt-4 text-lg leading-relaxed opacity-80">{s.copy}</p>
               </Reveal>

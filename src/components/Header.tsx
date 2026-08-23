@@ -26,15 +26,17 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#e6dbcb] bg-[#f9f6f0]/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
         <div className="flex items-center gap-5">
           <a href="#home" className="flex items-center gap-3">
-            <motion.span style={{ rotate: gearRotation }} className="block h-7 w-7 opacity-80">
+            <motion.span style={{ rotate: gearRotation }} className="block h-7 w-7 shrink-0 opacity-80">
               <GearMark className="h-full w-full" />
             </motion.span>
-            <span className="font-[family-name:var(--font-playfair)] text-2xl tracking-[0.18em] uppercase">
-              Gears
-              <span className="accent ml-2 text-lg tracking-normal normal-case">virtual solutions</span>
+            <span className="flex flex-col leading-tight">
+              <span className="font-[family-name:var(--font-playfair)] text-2xl uppercase tracking-[0.16em] whitespace-nowrap">
+                Gears
+              </span>
+              <span className="accent text-base whitespace-nowrap opacity-80">virtual solutions</span>
             </span>
           </a>
         </div>
@@ -54,12 +56,12 @@ export default function Header() {
             </a>
           ))}
         </div>
-        <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[15px] uppercase tracking-[0.22em]">
+        <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] uppercase tracking-[0.14em] lg:flex-nowrap lg:gap-x-7 lg:text-[14px]">
           {NAV.map((n) => (
             <a
               key={n.href}
               href={n.href}
-              className="group relative opacity-75 transition hover:opacity-100"
+              className="group relative whitespace-nowrap opacity-75 transition hover:opacity-100"
             >
               {n.label}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#5a4a42] transition-all duration-300 group-hover:w-full" />
